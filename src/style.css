@@ -73,7 +73,8 @@ nav {
   transition: border-color 0.3s ease;
 }
 
-.nav-links li:hover {
+.nav-links li:hover,
+.nav-links li:has(a.active) {
   border-bottom-color: rgb(177, 105, 105);
 }
 
@@ -188,12 +189,7 @@ nav {
 .card-content {
   padding:10px;
 }
-.rating-review{
-  display: flex;
-  align-items: center;
-  gap:5px;
-  margin-top: 10px;
-}
+
 .pagination-section{
   display: flex;
   justify-content: center;

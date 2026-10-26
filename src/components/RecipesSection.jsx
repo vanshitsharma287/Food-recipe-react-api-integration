@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import Pagination from "./common/Pagination";
-const PAGE_LIMIT = 8;
+const PAGE_LIMIT = 10;
 
 const RecipesSection = () => {
     const [recipes, setRecipes] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
+    const [skip, setSkip] = useState(0);
 
     const getAllRecipes = async () => {
         try{
-            const result = await fetch(`https://dummyjson.com/recipes?limit=${PAGE_LIMIT}`);
+            const result = await fetch(`https://dummyjson.com/recipes?limit=${PAGE_LIMIT}&skip=${skip}`);
             const jsonResult =  await result.json();
             setTotalItems(jsonResult.total);
             setRecipes(jsonResult.recipes);
@@ -23,7 +24,7 @@ const RecipesSection = () => {
 
     useEffect(() => {
         getAllRecipes();
-    }, []);
+    }, [currentPage, skip]);
 
 
     return (
@@ -35,7 +36,7 @@ const RecipesSection = () => {
                     ))}
                 </div>
 
-                <Pagination limit={PAGE_LIMIT} total={totalItems} currentPage={currentPage} />
+                <Pagination limit={PAGE_LIMIT} total={totalItems} currentPage={currentPage} setCurrentPage={setCurrentPage} setSkip={setSkip} />
              </section>
         
     )

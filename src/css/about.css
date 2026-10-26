@@ -1,0 +1,225 @@
+.about-page {
+  color: #173c35;
+  overflow: hidden;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 10vw, 10rem);
+  background: #f7f4eb;
+}
+
+.about-hero-content {
+  max-width: 560px;
+}
+
+.about-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #bb583f;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-hero h1 {
+  margin: 0 0 1.25rem;
+  font-family: Georgia, serif;
+  font-size: clamp(2.3rem, 4.5vw, 4.5rem);
+  line-height: 1.08;
+}
+
+.about-hero p,
+.mission-content p {
+  color: #52645d;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.9;
+}
+
+.about-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  background: #b9503a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.about-cta:hover {
+  background: #963c2b;
+  transform: translateY(-2px);
+}
+
+.about-hero-image,
+.mission-image {
+  position: relative;
+  min-width: 0;
+}
+
+.about-hero-image img,
+.mission-image img {
+  display: block;
+  width: 100%;
+  height: clamp(280px, 35vw, 480px);
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.image-note {
+  position: absolute;
+  right: -1rem;
+  bottom: 1.5rem;
+  max-width: 180px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #fffdf6;
+  color: #31523d;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 8px 25px #173c3518;
+  transform: rotate(-3deg);
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 8vw, 8rem);
+  background: #fffefa;
+}
+
+.about-feature {
+  text-align: center;
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #edf1e3;
+  color: #31523d;
+  font-size: 1.8rem;
+}
+
+.about-feature:nth-child(2) .feature-icon {
+  background: #fbecd7;
+}
+
+.about-feature:nth-child(3) .feature-icon {
+  background: #f8e1d9;
+}
+
+.about-feature h2 {
+  margin: 0 0 0.6rem;
+  font-family: Georgia, serif;
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+}
+
+.about-feature p {
+  max-width: 240px;
+  margin: 0 auto;
+  color: #64736c;
+  line-height: 1.7;
+}
+
+.about-mission {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2rem, 7vw, 7rem);
+  padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 10vw, 10rem);
+  background: #eff3e8;
+}
+
+.mission-content h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  line-height: 1.2;
+}
+
+.mission-image img {
+  height: clamp(260px, 30vw, 400px);
+}
+
+.about-bottom {
+  padding: 3.5rem 1.25rem;
+  background: #173c35;
+  color: #fffefa;
+  text-align: center;
+}
+
+.about-bottom h2 {
+  margin: 0 0 0.75rem;
+  font-family: Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+}
+
+.about-bottom p {
+  margin: 0;
+  color: #dce6da;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .about-hero,
+  .about-mission {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-hero-content {
+    max-width: 650px;
+  }
+
+  .about-hero-image img {
+    height: 340px;
+  }
+
+  .about-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem 1.25rem;
+    padding: 3rem 1.25rem;
+  }
+
+  .about-mission {
+    padding: 3rem 1.5rem;
+  }
+
+  .mission-image img {
+    height: 320px;
+  }
+
+  .image-note {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-image img,
+  .mission-image img {
+    height: 250px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.3rem;
+  }
+}
