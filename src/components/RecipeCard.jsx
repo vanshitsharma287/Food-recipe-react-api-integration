@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router";
+
 const RecipeCard = (props) => {
   const {info} = props;  
+  const navigate = useNavigate();
+
   return (
-     <div className="card">
+     <div onClick= {() => navigate(`/recipe/${info.id}`)} className="card">
         <img src={info.image} alt="recipe img" />
         <div className="card-content">
             <h3>{info.name}</h3>

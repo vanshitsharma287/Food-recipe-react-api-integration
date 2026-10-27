@@ -13,7 +13,7 @@ import Home from "./components/Home";
           <Route path="/" element={<Home />} />
           <Route path="/saved" element={<SavedRecipes />} />
           <Route path="/about" element={<About />} />
-          <Route path="/recipe/123" element={<RecipeInfo />} />
+          <Route path="/recipe/:id" element={<RecipeInfo />} />
         </Routes>
     )
 }
